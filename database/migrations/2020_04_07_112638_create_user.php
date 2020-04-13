@@ -20,7 +20,8 @@ class CreateUser extends Migration
             $table->string('password');
             $table->string('role',50)->default('admin');
             $table->timestamps();
-        });    }
+        });   
+    }
 
     /**
      * Reverse the migrations.

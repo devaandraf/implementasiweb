@@ -22,6 +22,9 @@
             <a href="{{url('barang')}}" class="pull-right">
               <button type="button" class="btn btn-info">Semua Data</button>
             </a>
+            <a href="{{url('barang/export')}}" class="pull-right">
+              <button type="button" class="btn btn-info">Export Excel</button>
+            </a>
           </div>
           @if(auth()->user()->role == "admin")
           <div class="card-header">

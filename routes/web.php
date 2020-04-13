@@ -49,6 +49,7 @@ Route::group(['middleware' => ['auth','roleCheck:admin,staff']], function()
 	Route::get('/barang/{id}/edit', 'BarangController@editBarang');
 	Route::post('/barang/{id}/update', 'BarangController@updateBarang');
 	Route::get('/barang/{id}/delete', 'BarangController@deleteBarang');
+	Route::get('/barang/export', 'BarangController@export');
 });
 
 ?>

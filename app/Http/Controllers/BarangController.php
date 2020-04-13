@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Barang;
 use App\Ruangan;
 use App\User;
+use App\Exports\BarangExport;
+use Maatwebsite\Excel\Facades\Excel;
+
 
 class BarangController extends Controller
 {
@@ -60,5 +63,10 @@ class BarangController extends Controller
         $barang->updated_by = $request->updated_by;
         $barang->save();
         return redirect('/barang');
+    }
+
+    public function export()
+    {
+        return Excel::download(new BarangExport, 'barang.xlsx');
     }
 }
