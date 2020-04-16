@@ -20,7 +20,7 @@ class BarangExport implements FromCollection, WithHeadings, ShouldAutoSize
     public function headings(): array
     {
         return [
-            'ID',
+            'No',
             'Nama Ruangan',
             'Nama Barang',
             'Total',
