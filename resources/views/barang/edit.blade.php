@@ -20,7 +20,16 @@
           </a>
           </div>
           <div class="card-body">
-            <form action="{{url('barang/'.$barang->id.'/update')}}" method="POST" enctype="multipart/form-data">
+            @if ($errors->any())
+            <div class="alert alert-danger">
+              <ul>
+                @foreach ($errors->all() as $error)
+                <li> {$error} </li>
+                @endforeach
+              </ul>
+            </div>
+            @endif  
+            <form action="{{url('barang/'.$barang->id.'/update')}}" method="POST" enctype="multipart/form-data" >
               @csrf
               <div class="form-group">
                 <label>Nama Ruangan</label>
@@ -41,6 +50,11 @@
               <div class="form-group">
                 <label>Barang Rusak</label>
                 <input type="number" min="0" name="rusak" class="form-control" value="{{ $barang->broken }}">
+              </div>
+              <div class="form-group">
+                <label>Gambar</label>
+                <img src="{{ url('img/'.$barang->gambar) }}" style="width: 200px;">
+                <input name="gambar" type="file" class="form-control" accept=".jpg, .png, .jpeg"></input>
               </div>
               <input type="hidden" name="created_by" value="{{ $barang->created_by }}">
               <input type="hidden" name="updated_by" value="{{ auth()->user()->id }}">

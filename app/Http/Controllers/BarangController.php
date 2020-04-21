@@ -31,13 +31,26 @@ class BarangController extends Controller
     }
 
     public function createBarang(Request $request){
+        $validateData = $request->validate
+        ([
+            'nama_barang' => 'required|max:255',
+            'total' => 'required',
+            'broken' => 'required',
+            'gambar' => 'required'
+        ]);
+
     	$barang = new Barang;
     	$barang->id_ruangan = $request->id_ruangan;
     	$barang->nama_barang = $request->nama_barang;
     	$barang->total = $request->total;
     	$barang->broken = $request->rusak;
     	$barang->created_by = $request->created_by;
-    	$barang->save();
+        $barang->gambar = $request->gambar;
+    	if ($request->hasFile('gambar')){
+            $request->file('gambar')->move('img/', $request->file('gambar')->getClientOriginalName());
+            $barang->gambar = $request->file('gambar')->getClientOriginalName();
+            $barang->save();
+        }
     	return redirect('/barang');
     }
 
@@ -61,7 +74,13 @@ class BarangController extends Controller
         $barang->broken = $request->rusak;
         $barang->created_by = $request->created_by;
         $barang->updated_by = $request->updated_by;
-        $barang->save();
+        $barang->gambar = $request->gambar;
+        if ($request->hasFile('gambar')){
+            $request->file('gambar')->move('img/', $request->file('gambar')->getClientOriginalName());
+            $barang->gambar = $request->file('gambar')->getClientOriginalName();
+            $barang->save();
+        }
+
         return redirect('/barang');
     }
 

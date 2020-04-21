@@ -42,6 +42,7 @@
                   <th scope="col">Nama Barang</th>
                   <th scope="col">Total</th>
                   <th scope="col">Rusak</th>
+                  <th scope="col">Gambar</th>
                   <th scope="col">Dibuat</th>
                   <th scope="col">Dirubah</th>
                   <th scope="col">Aksi</th>
@@ -55,6 +56,9 @@
                   <td>{{ $b->nama_barang }}</td>
                   <td>{{ $b->total }}</td>
                   <td>{{ $b->broken }}</td>
+                  <td>
+                      <img src="{{ $b->getGambar() }}" style="width: 70px; height: 70px; object-fit: cover;" />
+                  </td>
                   <td>
                       @foreach($user as $u)
                           @if($u->id == $b->created_by)
