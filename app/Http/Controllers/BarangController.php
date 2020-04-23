@@ -35,7 +35,7 @@ class BarangController extends Controller
         ([
             'nama_barang' => 'required|max:255',
             'total' => 'required',
-            'broken' => 'required',
+            'rusak' => 'required',
             'gambar' => 'required'
         ]);
 
@@ -67,6 +67,14 @@ class BarangController extends Controller
     }
 
     public function updateBarang($id, Request $request){
+        $validateData = $request->validate
+        ([
+            'nama_barang' => 'required|max:255',
+            'total' => 'required',
+            'rusak' => 'required',
+            'gambar' => 'required'
+        ]);
+        
         $barang = Barang::find($id);
         $barang->id_ruangan = $request->id_ruangan;
         $barang->nama_barang = $request->nama_barang;
