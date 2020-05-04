@@ -14,6 +14,7 @@ Route::get('/login','AuthController@login')->name('login');
 Route::post('/postLogin','AuthController@postLogin');
 Route::post('/register','AuthController@register');
 Route::get('/logout','AuthController@logout');
+Route::get('/sendemail','MailController@send');
 
 Route::group(['middleware' => ['auth','roleCheck:admin']], function()
 {
