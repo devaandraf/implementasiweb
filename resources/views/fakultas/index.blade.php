@@ -23,11 +23,14 @@
               <button type="button" class="btn btn-info">Semua Data</button>
             </a>
           </div>
-          <a href="{{url('fakultas/tambahFakultas')}}">
           <div class="card-header">
+            <a href="{{url('fakultas/tambahFakultas')}}">
               <button type="button" class="btn btn-primary"><i class="fa fa-plus"></i> Tambah Fakultas</button>
+            </a>
+            <a href="{{url('fakultas/importFakultas')}}">
+              <button type="button" class="btn btn-primary"><i class="fa fa-plus"></i> Import Excel</button>
+            </a>
           </div>
-          </a>
           <div class="card-body">
             <table class="table table-bordered">
               <thead>
@@ -63,6 +66,7 @@
           </div>
         </div>
       </div>  
+
   </div>
 
 </section>

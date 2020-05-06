@@ -21,6 +21,8 @@ Route::group(['middleware' => ['auth','roleCheck:admin']], function()
 	Route::get('/fakultas','FakultasController@index');
 	Route::get('/fakultas/tambahFakultas', 'FakultasController@tambahFakultas');
 	Route::post('/fakultas/createFakultas', 'FakultasController@createFakultas');
+	Route::get('/fakultas/importFakultas', 'FakultasController@importFakultas');
+	Route::post('/fakultas/import', 'FakultasController@import');
 	Route::get('/fakultas/{id}/edit', 'FakultasController@editFakultas');
 	Route::post('/fakultas/{id}/update', 'FakultasController@updateFakultas');
 	Route::get('/fakultas/{id}/delete', 'FakultasController@deleteFakultas');
