@@ -31,7 +31,7 @@
               <button type="button" class="btn btn-primary"><i class="fa fa-plus"></i> Import Excel</button>
             </a>
           </div>
-          <div class="card-body">
+          <div class="card-body table-responsive">
             <table class="table table-bordered">
               <thead>
                 <tr>
