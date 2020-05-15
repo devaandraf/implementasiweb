@@ -28,7 +28,7 @@
               <button type="button" class="btn btn-primary"><i class="fa fa-plus"></i> Tambah Fakultas</button>
             </a>
             <a href="{{url('fakultas/importFakultas')}}">
-              <button type="button" class="btn btn-primary"><i class="fa fa-plus"></i> Import Excel</button>
+              <button type="button" class="btn btn-success"><i class="fa fa-plus"></i> Import Excel</button>
             </a>
           </div>
           <div class="card-body table-responsive">

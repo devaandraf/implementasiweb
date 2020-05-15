@@ -25,10 +25,11 @@ class BarangExport implements FromCollection, WithHeadings, ShouldAutoSize
             'Nama Barang',
             'Total',
             'Rusak',
-            'Dibuat',
-            'Dirubah',
-            'Dibuat',
-            'Dirubah'
+            'Gambar',
+            'Dibuat Oleh',
+            'Dirubah Oleh',
+            'Dibuat Pada',
+            'Dirubah Pada',
         ];
     }
 }
